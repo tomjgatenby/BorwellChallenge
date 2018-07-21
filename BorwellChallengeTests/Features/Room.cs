@@ -15,9 +15,16 @@ namespace BorwellChallengeTests
             this.height = height;
         }
 
-        internal bool areDimensionsValid()
+        internal bool AreDimensionsValid()
         {
-            return true;
+            if (width > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

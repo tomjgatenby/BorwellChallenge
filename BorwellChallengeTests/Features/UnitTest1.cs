@@ -10,21 +10,32 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BorwellChallengeTests
 {
-    //areDimensionsValid() method testing.
+    //AreDimensionsValid() method testing.
     //Test that all of the properties of room are greater than 0.
     [TestClass]
-    public class areDimensionsValidTests
+    public class AreDimensionsValidTests
     {
 
         [TestMethod]
-        public void validDimensions()
+        public void ValidDimensions()
         {
             decimal width = 1;
             decimal length = 1;
             decimal height = 1;
             var data = new Room(width, length, height);
 
-            Assert.IsTrue(data.areDimensionsValid());
+            Assert.IsTrue(data.AreDimensionsValid());
+        }
+
+        [TestMethod]
+        public void InvalidWidth()
+        {
+            decimal width = 0;
+            decimal length = 1;
+            decimal height = 1;
+            var data = new Room(width, length, height);
+
+            Assert.IsFalse(data.AreDimensionsValid());
         }
     }
 }
