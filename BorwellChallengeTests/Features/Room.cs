@@ -17,7 +17,7 @@ namespace BorwellChallengeTests
 
         internal bool areDimensionsValid()
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }

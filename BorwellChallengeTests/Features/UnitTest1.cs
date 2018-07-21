@@ -10,13 +10,14 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BorwellChallengeTests
 {
+    //areDimensionsValid() method testing.
+    //Test that all of the properties of room are greater than 0.
     [TestClass]
-    public class UnitTest1
+    public class areDimensionsValidTests
     {
-        //areDimenstionsValid() method testing.
-        //Test that all of the properties of room are greater than 0.
+
         [TestMethod]
-        public void TestMethod1()
+        public void validDimensions()
         {
             decimal width = 1;
             decimal length = 1;
