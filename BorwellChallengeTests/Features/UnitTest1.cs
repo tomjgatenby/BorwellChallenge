@@ -59,5 +59,17 @@ namespace BorwellChallengeTests
 
             Assert.IsFalse(data.AreDimensionsValid());
         }
+
+        [TestMethod]
+        public void InvalidDimension()
+        {
+            decimal width = 0;
+            decimal length = -1;
+            decimal height = 2;
+            var data = new Room(width, length, height);
+
+            Assert.IsFalse(data.AreDimensionsValid());
+
+        }
     }
 }
