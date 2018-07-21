@@ -49,7 +49,7 @@ namespace BorwellChallengeTests
 
         internal decimal CalculateVolume()
         {
-            return 1;
+            return (width * length * height);
         }
     }
 }

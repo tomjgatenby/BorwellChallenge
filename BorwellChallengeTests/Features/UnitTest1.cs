@@ -157,5 +157,15 @@ namespace BorwellChallengeTests
             var data = new Room(width, length, height);
             Assert.AreEqual(1, data.CalculateVolume());
         }
+
+        [TestMethod]
+        public void DecimalMultiplication()
+        {
+            decimal width = 1.5M;
+            decimal length = 2;
+            decimal height = 1.5M;
+            var data = new Room(width, length, height);
+            Assert.AreEqual(4.5M, data.CalculateVolume());
+        }
     }
 }
