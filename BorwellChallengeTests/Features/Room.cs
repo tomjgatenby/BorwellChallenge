@@ -17,7 +17,7 @@ namespace BorwellChallengeTests
 
         internal bool AreDimensionsValid()
         {
-            if (width > 0)
+            if (width > 0 && length > 0)
             {
                 return true;
             }
