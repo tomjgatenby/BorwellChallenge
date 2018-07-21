@@ -79,7 +79,7 @@ namespace BorwellChallengeTests
     public class CalculateAreaTests
     {
         [TestMethod]
-        public void Test1()
+        public void IntegerMultiplication()
         {
             decimal width = 1;
             decimal length = 1;
@@ -91,7 +91,7 @@ namespace BorwellChallengeTests
         }
 
         [TestMethod]
-        public void Test2()
+        public void DecimalMultiplication()
         {
             decimal width = 1.5M;
             decimal length = 2;
@@ -113,5 +113,22 @@ namespace BorwellChallengeTests
             Assert.AreEqual(1.222M, data.CalculateArea());
         }
 
+    }
+    //Calculates the Paint Required for a room.
+    //Taken the decision round to 3 decimal places.
+    [TestClass]
+    public class PaintRequiredTests
+    {
+        [TestMethod]
+        public void Test1()
+        {
+            decimal width = 1;
+            decimal length = 1;
+            decimal height = 1;
+            var data = new Room(width, length, height);
+            int wallArea = 4; //perimeter = 4 * 1 from height.
+            decimal expected = (wallArea * Room.PaintLitrePerSqMeter);
+            Assert.AreEqual(expected, data.CalculatePaintRequired());
+        }
     }
 }

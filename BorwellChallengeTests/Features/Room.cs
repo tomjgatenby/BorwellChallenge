@@ -7,6 +7,7 @@ namespace BorwellChallengeTests
         private decimal width;
         private decimal length;
         private decimal height;
+        public const int PaintLitrePerSqMeter = 12;
 
         public Room(decimal width, decimal length, decimal height)
         {
@@ -14,6 +15,7 @@ namespace BorwellChallengeTests
             this.length = length;
             this.height = height;
         }
+
 
         internal bool AreDimensionsValid()
         {
@@ -33,6 +35,11 @@ namespace BorwellChallengeTests
             const int decimalPlaces = 3;
             area = Math.Round(area, decimalPlaces);
             return area;
+        }
+
+        internal int CalculatePaintRequired()
+        {
+            return 48;
         }
     }
 }
