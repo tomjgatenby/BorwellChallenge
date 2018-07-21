@@ -29,7 +29,7 @@ namespace BorwellChallengeTests
 
         internal decimal CalculateArea()
         {
-            return 1;
+            return (width * length);
         }
     }
 }

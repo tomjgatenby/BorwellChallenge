@@ -85,7 +85,19 @@ namespace BorwellChallengeTests
             decimal height = 1;
             var data = new Room(width, length, height);
 
-            Assert.Equals(1, data.CalculateArea());
+            Assert.AreEqual(1, data.CalculateArea());
+
+        }
+
+        [TestMethod]
+        public void Test2()
+        {
+            decimal width = 1.5M;
+            decimal length = 2;
+            decimal height = 1;
+            var data = new Room(width, length, height);
+
+            Assert.AreEqual(3, data.CalculateArea());
 
         }
     }
