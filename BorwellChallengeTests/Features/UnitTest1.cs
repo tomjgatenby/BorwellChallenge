@@ -72,4 +72,21 @@ namespace BorwellChallengeTests
 
         }
     }
+
+    //Calculates the Area of the room using width and length properties.
+    [TestClass]
+    public class CalculateAreaTests
+    {
+        [TestMethod]
+        public void Test1()
+        {
+            decimal width = 1;
+            decimal length = 1;
+            decimal height = 1;
+            var data = new Room(width, length, height);
+
+            Assert.Equals(1, data.CalculateArea());
+
+        }
+    }
 }

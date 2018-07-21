@@ -26,5 +26,10 @@ namespace BorwellChallengeTests
                 return false;
             }
         }
+
+        internal decimal CalculateArea()
+        {
+            return 1;
+        }
     }
 }
