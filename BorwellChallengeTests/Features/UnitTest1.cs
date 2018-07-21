@@ -124,10 +124,23 @@ namespace BorwellChallengeTests
         {
             decimal width = 1;
             decimal length = 1;
-            decimal height = 1;
+            decimal height = Room.SqMeterPerPaintLitre; //Set this to height so division doesn't need rounding.
             var data = new Room(width, length, height);
-            int wallArea = 4; //perimeter = 4 * 1 from height.
-            decimal expected = (wallArea * Room.PaintLitrePerSqMeter);
+            decimal wallArea = (4 * height); //perimeter = 4
+            decimal expected = (wallArea / Room.SqMeterPerPaintLitre);
+            Assert.AreEqual(expected, data.CalculatePaintRequired());
+        }
+
+        [TestMethod]
+        public void Test2()
+        {
+            decimal width = 2;
+            decimal length = 2;
+            decimal height = 2;
+            var data = new Room(width, length, height);
+            decimal wallArea = 16; //perimeter = 8, * 2 from height
+            decimal expected = (wallArea / Room.SqMeterPerPaintLitre);
+            expected = Math.Round(expected, 3);
             Assert.AreEqual(expected, data.CalculatePaintRequired());
         }
     }

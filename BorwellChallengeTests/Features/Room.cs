@@ -7,7 +7,7 @@ namespace BorwellChallengeTests
         private decimal width;
         private decimal length;
         private decimal height;
-        public const int PaintLitrePerSqMeter = 12;
+        public const int SqMeterPerPaintLitre = 12;
 
         public Room(decimal width, decimal length, decimal height)
         {
@@ -37,9 +37,14 @@ namespace BorwellChallengeTests
             return area;
         }
 
-        internal int CalculatePaintRequired()
+        internal decimal CalculatePaintRequired()
         {
-            return 48;
+            decimal perimeter = 2 * (width + length);
+            decimal wallArea = perimeter * height;
+            decimal paintRequired = wallArea / SqMeterPerPaintLitre;
+            const int decimalPlaces = 3;
+            paintRequired = Math.Round(paintRequired, decimalPlaces);
+            return paintRequired;
         }
     }
 }
