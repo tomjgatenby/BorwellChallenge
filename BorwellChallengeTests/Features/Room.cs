@@ -29,7 +29,10 @@ namespace BorwellChallengeTests
 
         internal decimal CalculateArea()
         {
-            return (width * length);
+            decimal area = (width * length);
+            const int decimalPlaces = 3;
+            area = Math.Round(area, decimalPlaces);
+            return area;
         }
     }
 }

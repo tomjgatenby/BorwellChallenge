@@ -74,6 +74,7 @@ namespace BorwellChallengeTests
     }
 
     //Calculates the Area of the room using width and length properties.
+    //Taken the decision round to 3 decimal places.
     [TestClass]
     public class CalculateAreaTests
     {
@@ -100,5 +101,17 @@ namespace BorwellChallengeTests
             Assert.AreEqual(3, data.CalculateArea());
 
         }
+
+        [TestMethod]
+        public void DecimalRoundingTest()
+        {
+            decimal width = 1.222222222222M;
+            decimal length = 1;
+            decimal height = 1;
+            var data = new Room(width, length, height);
+
+            Assert.AreEqual(1.222M, data.CalculateArea());
+        }
+
     }
 }
