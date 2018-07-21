@@ -46,5 +46,10 @@ namespace BorwellChallengeTests
             paintRequired = Math.Round(paintRequired, decimalPlaces);
             return paintRequired;
         }
+
+        internal decimal CalculateVolume()
+        {
+            return 1;
+        }
     }
 }

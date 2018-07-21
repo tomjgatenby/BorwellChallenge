@@ -144,4 +144,18 @@ namespace BorwellChallengeTests
             Assert.AreEqual(expected, data.CalculatePaintRequired());
         }
     }
+
+    [TestClass]
+    public class CalculateVolumeTests
+    {
+        [TestMethod]
+        public void IntegerMultiplication()
+        {
+            decimal width = 1;
+            decimal length = 1;
+            decimal height = 1;
+            var data = new Room(width, length, height);
+            Assert.AreEqual(1, data.CalculateVolume());
+        }
+    }
 }
