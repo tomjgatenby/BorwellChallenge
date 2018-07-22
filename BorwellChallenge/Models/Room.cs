@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace BorwellChallengeTests
+namespace BorwellChallengeTests.Models
 {
-    internal class Room
+    public class Room
     {
         private decimal width;
         private decimal length;
@@ -17,7 +17,7 @@ namespace BorwellChallengeTests
         }
 
 
-        internal bool AreDimensionsValid()
+        public bool AreDimensionsValid()
         {
             if (width > 0 && length > 0 && height > 0)
             {
@@ -29,7 +29,7 @@ namespace BorwellChallengeTests
             }
         }
 
-        internal decimal CalculateArea()
+        public decimal CalculateArea()
         {
             decimal area = (width * length);
             const int decimalPlaces = 3;
@@ -37,7 +37,7 @@ namespace BorwellChallengeTests
             return area;
         }
 
-        internal decimal CalculatePaintRequired()
+        public decimal CalculatePaintRequired()
         {
             decimal perimeter = 2 * (width + length);
             decimal wallArea = perimeter * height;
@@ -47,7 +47,7 @@ namespace BorwellChallengeTests
             return paintRequired;
         }
 
-        internal decimal CalculateVolume()
+        public decimal CalculateVolume()
         {
             decimal volume = width * length * height; //Not using CalculateArea * Height to prevent rounding twice.
             const int decimalPlaces = 3;
