@@ -3,35 +3,38 @@
     ViewData["Title"] = "Main";
 }
 
-<!DOCTYPE html>
+<title>Room Calculator</title>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Room Calculator</title>
-</head>
-<body>
-    <div>
-        <form>
-            <label for="width">Room Width: <input type="text" name="width" value="@Model.Width" /></label>
+<div>
+    <form>
+      
+        <fieldset>
+            <legend>Room Dimensions</legend>  
+            <label for="width">Room Width: 
             <br />
-            <label for="length">Room Length: <input type="text" name="length" value="@Model.Length" /></label>
+            <input type="text" name="width" value="@Model.Width" /></label>
             <br />
-            <label for="height">Room Height: <input type="text" name="height" value="@Model.Height" /></label>
+            <label for="length">Room Length: 
+            <br/>
+            <input type="text" name="length" value="@Model.Length" /></label>
+            <br />
+            <label for="height">Room Height: 
+            <br/>
+            <input type="text" name="height" value="@Model.Height" /></label>
             <br />
             <input type="submit" value="Calculate" />
-        </form>
-        @if (Model.ValidDimensions)
-        {
-            <label for="Area">Room Area: @Model.Area</label>
-            <br />
-            <label for="PaintRequired">Paint Required: @Model.PaintRequired</label>
-            <br />
-            <label for="Volume">Room Volume: @Model.Volume</label>
-        }@if (Model.ValidDimensions == false)
-        {
-            <p>Please enter values great than 0.</p>
-        }
-    </div>
-</body>
-</html>
+        </fieldset>
+    </form>
+    <br/>
+    @if (Model.ValidDimensions)
+    {
+        <label for="Area">Room Area: @Model.Area M<sup>2</sup></label>
+        <br />
+        <label for="PaintRequired">Paint Required: @Model.PaintRequired litres</label>
+        <br />
+        <label for="Volume">Room Volume: @Model.Volume M<sup>3</sup></label>
+    }@if (Model.ValidDimensions == false)
+    {
+        <p>Please enter values great than 0.</p>
+    }
+</div>
