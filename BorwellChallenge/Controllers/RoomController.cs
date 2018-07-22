@@ -8,7 +8,7 @@ namespace BorwellChallenge.Controllers
 {
     public class RoomController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Main()
         {
             return View();
         }
