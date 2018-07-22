@@ -49,7 +49,10 @@ namespace BorwellChallengeTests
 
         internal decimal CalculateVolume()
         {
-            return (width * length * height);
+            decimal volume = width * length * height; //Not using CalculateArea * Height to prevent rounding twice.
+            const int decimalPlaces = 3;
+            volume = Math.Round(volume, decimalPlaces);
+            return volume;
         }
     }
 }

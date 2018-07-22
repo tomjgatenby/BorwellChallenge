@@ -74,7 +74,7 @@ namespace BorwellChallengeTests
     }
 
     //Calculates the Area of the room using width and length properties.
-    //Taken the decision round to 3 decimal places.
+    //Taken the decision to round to 3 decimal places.
     [TestClass]
     public class CalculateAreaTests
     {
@@ -115,7 +115,7 @@ namespace BorwellChallengeTests
 
     }
     //Calculates the Paint Required for a room.
-    //Taken the decision round to 3 decimal places.
+    //Taken the decision to round to 3 decimal places.
     [TestClass]
     public class PaintRequiredTests
     {
@@ -145,6 +145,8 @@ namespace BorwellChallengeTests
         }
     }
 
+    //Calculates the volume of a room.
+    //Taken the decision to round to 3 decimal places
     [TestClass]
     public class CalculateVolumeTests
     {
@@ -166,6 +168,16 @@ namespace BorwellChallengeTests
             decimal height = 1.5M;
             var data = new Room(width, length, height);
             Assert.AreEqual(4.5M, data.CalculateVolume());
+        }
+
+        [TestMethod]
+        public void DecimalRounding()
+        {
+            decimal width = 1.22222M;
+            decimal length = 1;
+            decimal height = 1;
+            var data = new Room(width, length, height);
+            Assert.AreEqual(1.222M, data.CalculateVolume());
         }
     }
 }
