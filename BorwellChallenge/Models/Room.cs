@@ -1,11 +1,18 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace BorwellChallengeTests.Models
 {
     public class Room
     {
+        // Need an upper limit on Room Dimensions
+        private const int sizeRestriction = 1000000000;
+
+        [Range(0, sizeRestriction, ErrorMessage = "Enter Number Greater than 0")]
         public decimal Width { get; set; }
+        [Range(0, sizeRestriction, ErrorMessage = "Enter Number Greater than 0")]
         public decimal Length { get; set; }
+        [Range(0, sizeRestriction, ErrorMessage = "Enter Number Greater than 0")]
         public decimal Height { get; set; }
         public decimal Area { get { return CalculateArea(); } }
         public decimal PaintRequired { get { return CalculatePaintRequired(); } }
